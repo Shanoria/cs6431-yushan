@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+    // 注意，这里不需要单独为每个文件配置路径，直接配置根路径，根路径下所有子文件夹都可以被访问到
+      // "@components/*": ["src/components/*"],
+      "@/*": ["src/*"]
+    }
+  }
+}
