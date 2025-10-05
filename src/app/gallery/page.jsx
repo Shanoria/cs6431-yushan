@@ -9,7 +9,7 @@ export default function Gallery() {
         { src: "/p1.jpg", width: 800, height: 1000 },
         { src: "/p2.jpg", width: 800, height: 1200 },
         { src: "/p3.jpg", width: 800, height: 1200 },
-        { src: "/p4.jpg", width: 800, height: 1200 },
+        { src: "/p4.png", width: 800, height: 1200 },
       ],
       title: "Business Photos – Individual",
       description:
@@ -20,7 +20,7 @@ export default function Gallery() {
         { src: "/b1.jpg", width: 800, height: 1200 },
         { src: "/b2.jpg", width: 800, height: 1200 },
         { src: "/b3.jpg", width: 800, height: 1200 },
-        { src: "/b4.jpg", width: 800, height: 1200 },
+        { src: "/b4.png", width: 800, height: 1200 },
       ],
       title: "Aesthetic Photos – Photography",
       description:
@@ -31,7 +31,7 @@ export default function Gallery() {
         { src: "/o1.jpg", width: 1200, height: 800 },
         { src: "/o2.jpg", width: 1200, height: 800 },
         { src: "/o3.jpg", width: 1200, height: 800 },
-        { src: "/o4.jpg", width: 1200, height: 800 },
+        { src: "/o4.png", width: 1200, height: 800 },
       ],
       title: "Interest Photos – Animals",
       description:
