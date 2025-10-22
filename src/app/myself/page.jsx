@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Myself() {
@@ -15,7 +15,45 @@ export default function Myself() {
     { name: "c4d", alt: "c4d" },
     { name: "Dw", alt: "Dw" },
   ];
+  const [isHovered, setIsHovered] = useState(false);
 
+  // 定义浮动图片及其独特的样式
+  const floatingImages = [
+    {
+      src: "/myself_1.jpg",
+      alt: "myself 1",
+      // 样式：定位、旋转、层级
+      style: "w-32 h-auto top-4 left-4 rotate-[-15deg] z-10",
+      // 隐藏时：透明 且 向左上方位移
+      hidden: "opacity-0 -translate-x-3 -translate-y-3",
+      // 显示时：不透明 且 恢复原位
+      visible: "opacity-100 translate-x-0 translate-y-0",
+    },
+    {
+      src: "/myself_2.jpg",
+      alt: "myself 2",
+      style: "w-28 h-auto top-12 right-4 rotate-[10deg] z-20",
+      // 隐藏时：透明 且 向右上方位移
+      hidden: "opacity-0 translate-x-3 -translate-y-3",
+      visible: "opacity-100 translate-x-0 translate-y-0",
+    },
+    {
+      src: "/myself_3.jpg",
+      alt: "myself 3",
+      style: "w-36 h-auto bottom-16 left-8 rotate-[5deg] z-10",
+      // 隐藏时：透明 且 向左下方位移
+      hidden: "opacity-0 -translate-x-3 translate-y-3",
+      visible: "opacity-100 translate-x-0 translate-y-0",
+    },
+    {
+      src: "/myself_4.jpg",
+      alt: "myself 4",
+      style: "w-24 h-auto bottom-4 right-10 rotate-[-8deg] z-0",
+      // 隐藏时：透明 且 向右下方位移
+      hidden: "opacity-0 translate-x-3 translate-y-3",
+      visible: "opacity-100 translate-x-0 translate-y-0",
+    },
+  ];
   const bambooAnimationRef = useRef(null);
 
   useEffect(() => {
@@ -68,14 +106,40 @@ export default function Myself() {
 
       <div className="px-3 pt-3 md:px-12 md:pt-8 relative">
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-          <div className="w-full md:w-1/4 flex-shrink-0">
+          <div
+            className="w-full md:w-1/5 flex-shrink-0 shadow-lg relative group" // 1. 添加 relative
+            onMouseEnter={() => setIsHovered(true)} // 2. 添加 mouse enter
+            onMouseLeave={() => setIsHovered(false)} // 3. 添加 mouse leave
+          >
             <Image
-              src={"/parrot.jpg"}
-              alt="parrot"
-              width={1290}
-              height={1558}
+              src={"/myself_pic.jpg"}
+              alt="myself_pic"
+              width={900}
+              height={0}
               className="w-full h-auto rounded-lg"
             />
+
+            {/* 4. 添加浮动图片 */}
+            {floatingImages.map((img) => (
+              <div
+                key={img.src}
+                className={`
+                  absolute ${img.style}
+                  transition-all duration-500 ease-in-out
+                  ${isHovered ? img.visible : img.hidden}
+                `}
+                // 防止鼠标在浮动图片上时触发父容器的 mouseLeave
+                style={{ pointerEvents: "none" }}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={200} // 提供一个基础宽度
+                  height={200} // 提供一个基础高度 (宽高比将由 h-auto 保持)
+                  className="w-full h-auto rounded-md shadow-xl object-cover"
+                />
+              </div>
+            ))}
           </div>
           <div className="w-full md:w-2/3 break-words">
             <div className="space-y-6 text-gray-700">
