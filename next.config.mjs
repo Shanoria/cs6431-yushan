@@ -12,9 +12,9 @@ export default {
   output: "export",
   basePath: `/${repoName}`,
   assetPrefix: `/${repoName}`,
-  images: {
-    unoptimized: true,
-  },
+  // images: {
+  //   unoptimized: true,
+  // },
   trailingSlash: true,
   webpack: (config) => {
     config.resolve.alias = {
