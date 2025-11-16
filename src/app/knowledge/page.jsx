@@ -1,6 +1,7 @@
 "use client";
 
 import SkillBar from "../../components/SkillBar";
+import { getAssetPath } from "../../utils/assetPath";
 
 export default function Knowledge() {
   const skills = [
@@ -14,43 +15,43 @@ export default function Knowledge() {
 
   const mainSkills = [
     {
-      icon: "/ps.png",
+      icon: getAssetPath("/ps.png"),
       name: "Photoshop (PS)",
       description: "Photo editing & design",
       percentage: 90,
     },
     {
-      icon: "/palette.png",
+      icon: getAssetPath("/palette.png"),
       name: "Illustrator (AI)",
       description: "Vector graphics design",
       percentage: 90,
     },
     {
-      icon: "/triangle.png",
+      icon: getAssetPath("/triangle.png"),
       name: "3D Max",
       description: "3D modeling",
       percentage: 60,
     },
     {
-      icon: "/painting.png",
+      icon: getAssetPath("/painting.png"),
       name: "Figma / Sketch",
       description: "UI/UX design",
       percentage: 95,
     },
     {
-      icon: "/react.png",
+      icon: getAssetPath("/react.png"),
       name: "React",
       description: "Web development",
       percentage: 5,
     },
     {
-      icon: "/blender.png",
+      icon: getAssetPath("/blender.png"),
       name: "Maya/Blender",
       description: "3D design/creat design",
       percentage: 30,
     },
     {
-      icon: "/computer.png",
+      icon: getAssetPath("/computer.png"),
       name: "Unity",
       description: "VR/AR",
       percentage: 15,

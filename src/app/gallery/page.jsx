@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Card from "../../components/Card";
 import { FaHandPointer } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import { getAssetPath } from "../../utils/assetPath";
 
 export default function Gallery() {
   // 状态管理：true 为 workList，false 为 photoList
@@ -13,22 +14,22 @@ export default function Gallery() {
     {
       images: [
         {
-          src: "/p1.jpg",
+          src: getAssetPath("/p1.jpg"),
           width: 800,
           height: 1200,
         },
         {
-          src: "/p2.jpg",
+          src: getAssetPath("/p2.jpg"),
           width: 800,
           height: 1200,
         },
         {
-          src: "/p3.jpg",
+          src: getAssetPath("/p3.jpg"),
           width: 800,
           height: 1200,
         },
         {
-          src: "/p4.jpg",
+          src: getAssetPath("/p4.jpg"),
           width: 800,
           height: 1200,
         },
@@ -40,27 +41,27 @@ export default function Gallery() {
     {
       images: [
         {
-          src: "/m1.png",
+          src: getAssetPath("/m1.png"),
           width: 800,
           height: 1000,
         },
         {
-          src: "/m2.png",
+          src: getAssetPath("/m2.png"),
           width: 800,
           height: 1200,
         },
         {
-          src: "/m3.png",
+          src: getAssetPath("/m3.png"),
           width: 800,
           height: 1200,
         },
         {
-          src: "/m4.png",
+          src: getAssetPath("/m4.png"),
           width: 800,
           height: 1200,
         },
         {
-          src: "/m5.png",
+          src: getAssetPath("/m5.png"),
           width: 800,
           height: 1200,
         },
@@ -73,37 +74,37 @@ export default function Gallery() {
     {
       images: [
         {
-          src: "/w1.png",
+          src: getAssetPath("/w1.png"),
           width: 1200,
           height: 800,
         },
         {
-          src: "/w2.png",
+          src: getAssetPath("/w2.png"),
           width: 1200,
           height: 800,
         },
         {
-          src: "/w3.png",
+          src: getAssetPath("/w3.png"),
           width: 1200,
           height: 800,
         },
         {
-          src: "/w4.png",
+          src: getAssetPath("/w4.png"),
           width: 1200,
           height: 800,
         },
         {
-          src: "/w5.jpg",
+          src: getAssetPath("/w5.jpg"),
           width: 1200,
           height: 800,
         },
         {
-          src: "/w6.jpg",
+          src: getAssetPath("/w6.jpg"),
           width: 1200,
           height: 800,
         },
         {
-          src: "/w7.jpg",
+          src: getAssetPath("/w7.jpg"),
           width: 1200,
           height: 800,
         },
@@ -117,22 +118,22 @@ export default function Gallery() {
     {
       images: [
         {
-          src: "/photo1.jpg",
+          src: getAssetPath("/photo1.jpg"),
           width: 800,
           height: 1200,
         },
       ],
       title: "Passion photo ",
-      description: `This composite image is a true reflection of my love for traditional Chinese culture and art.To express this passion fully, I intentionally blended four things that matter most in my life — Guqin, calligraphy, tea ceremony, and Hanfu culture.I’ve been playing the Guqin for five years, practicing the tea ceremony for one year, and I’m currently learning calligraphy with a teacher.Every detail in the image holds this devotion:
+      description: `This composite image is a true reflection of my love for traditional Chinese culture and art.To express this passion fully, I intentionally blended four things that matter most in my life — Guqin, calligraphy, tea ceremony, and Hanfu culture.I've been playing the Guqin for five years, practicing the tea ceremony for one year, and I'm currently learning calligraphy with a teacher.Every detail in the image holds this devotion:
         • The Guqin strings at the bottom
         • The calligraphy tools at the to
         • The tea set in the foreground
-        • The Hanfu I’m wearing in the middle`,
+        • The Hanfu I'm wearing in the middle`,
     },
     {
       images: [
         {
-          src: "/photo2.jpg",
+          src: getAssetPath("/photo2.jpg"),
           width: 800,
           height: 1200,
         },
@@ -145,7 +146,7 @@ export default function Gallery() {
     {
       images: [
         {
-          src: "/photo3.jpg",
+          src: getAssetPath("/photo3.jpg"),
           width: 800,
           height: 1200,
         },

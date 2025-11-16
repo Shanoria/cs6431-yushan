@@ -1,11 +1,12 @@
 import Image from "next/image";
+import { getAssetPath } from "../../utils/assetPath";
 
 export default function Education() {
   return (
     <main>
       <div className="fixed top-0 left-0 h-screen bg-gray-800">
         <Image
-          src={"/side_bg.png"}
+          src={getAssetPath("/side_bg.png")}
           alt="side_bg"
           width={0} // 设为0，由样式决定
           height={0} // 设为0，由样式决定
@@ -28,7 +29,7 @@ export default function Education() {
           <div className="flex flex-col w-1/2 items-center text-center">
             <div>
               <Image
-                src="/daLianJiaoTongLogo.png"
+                src={getAssetPath("/daLianJiaoTongLogo.png")}
                 alt="Dalian Jiaotong University Logo"
                 width={280}
                 height={280}
@@ -55,7 +56,7 @@ export default function Education() {
 
             <div className="mt-12">
               <Image
-                src="/universityOfLimerick.png"
+                src={getAssetPath("/universityOfLimerick.png")}
                 alt="University of Limerick Logo"
                 width={280}
                 height={280}
