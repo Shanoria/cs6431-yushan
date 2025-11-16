@@ -96,7 +96,7 @@ export default function Myself() {
           priority
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center w-[350]">
-          <div className="text-4xl mb-4 text-white">ABOUT ME</div>
+          <div className="text-4xl mb-4 mt-10 text-white">ABOUT ME</div>
           <ul className="list-disc list-inside text-white text-lg space-y-1 ml-7">
             <li>MySelf</li>
             <li>My life</li>

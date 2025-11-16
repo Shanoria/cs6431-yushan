@@ -15,7 +15,7 @@ export default function Education() {
         />
 
         <div className="absolute inset-0 left-[20] top-[20] z-10 flexitems-center justify-center">
-          <h1 className="text-white text-3xl font-bold tracking-[0.5em] [writing-mode:vertical-rl] [text-orientation:upright]">
+          <h1 className="text-white mt-16 text-3xl font-bold tracking-[0.5em] [writing-mode:vertical-rl] [text-orientation:upright]">
             EDUCATION
           </h1>
         </div>

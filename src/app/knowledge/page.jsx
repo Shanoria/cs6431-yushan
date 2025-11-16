@@ -89,7 +89,7 @@ export default function Knowledge() {
         </div>
       </div>
 
-      <div className="absolute left-[200px] top-[36px] w-[40%] p-8 md:p-16">
+      <div className="absolute left-[200px] right-[450px] top-[36px] p-8 md:p-16">
         <div className="mx-auto space-y-6">
           {mainSkills.map((skill) => (
             <SkillBar

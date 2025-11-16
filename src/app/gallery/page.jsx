@@ -176,7 +176,7 @@ export default function Gallery() {
         >
           <FaHandPointer className="text-blue-500" />
           <span className="text-sm font-medium text-gray-700">
-            {isWorkDisplay ? "Phone Display" : "Work Display"}
+            {isWorkDisplay ? "Photo Display" : "Work Display"}
           </span>
         </button>
       </div>
