@@ -6,12 +6,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // 从环境变量读取 basePath，默认为空
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const repoName = "cs6431-yushan";
 
 export default {
   output: "export",
-  basePath: basePath,
-  assetPrefix: basePath,
+  basePath: `/${repoName}`,
+  assetPrefix: `/${repoName}`,
   images: {
     unoptimized: true,
   },
