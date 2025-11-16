@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
+import { getAssetPath } from "../../utils/assetPath";
 // import InkRippleBackground from "../../components/InkRippleBackground";
 
 export default function MainPage() {
@@ -21,7 +22,7 @@ export default function MainPage() {
           alignItems: "flex-end",
           justifyContent: "center",
           position: "relative",
-          backgroundImage: "url('/main_bg.png')",
+          backgroundImage: `url('${getAssetPath("/main_bg.png")}')`,
         }}
       >
         {/* <InkRippleBackground></InkRippleBackground> */}
