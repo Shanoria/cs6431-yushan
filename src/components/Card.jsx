@@ -20,7 +20,7 @@ const variants = {
   }),
 };
 
-export default function Card({ images, title }) {
+export default function Card({ images, title, description }) {
   // state 同时保存当前页面索引和滑动方向
   const [[page, direction], setPage] = useState([0, 0]);
 
@@ -36,6 +36,9 @@ export default function Card({ images, title }) {
   if (!images || images.length === 0) {
     return null;
   }
+
+  // 判断是否使用共享描述：如果传入了 description 参数，则使用共享描述
+  const useSharedDescription = description !== undefined;
 
   // 翻页逻辑
   const paginate = (newDirection) => {
@@ -71,10 +74,10 @@ export default function Card({ images, title }) {
           >
             <Image
               src={currentImage.src}
-              alt={currentImage.alt} // 使用从数据中传入的 alt
+              alt={currentImage.alt || ""} // 使用从数据中传入的 alt
               width={currentImage.width}
               height={currentImage.height}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain bg-gray-50"
               priority // 优先加载第一张可见的图片
             />
           </motion.div>
@@ -110,29 +113,31 @@ export default function Card({ images, title }) {
 
       {/* 文字描述区域 */}
       <div className="px-6 py-4 flex-grow flex flex-col justify-center items-center">
-        <h3 className="text-l mb-2 text-gray-800 font-semibold">{title}</h3>
-        {/* 修改开始：调整高度并移除 relative */}
+        {title && (
+          <h3 className="text-l mb-2 text-gray-800 font-semibold">{title}</h3>
+        )}
         <div className="h-16 w-full flex items-center justify-center">
-          {" "}
-          {/* 将 h-12 调整为 h-16 (约等于3-4行高度) */}
-          <AnimatePresence mode="wait">
-            {" "}
-            {/* mode="wait" 确保旧文字退出后再显示新文字 */}
-            <motion.p
-              key={page} // key 同样是动态的
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-              // 修改开始：移除 absolute，添加最大高度、滚动和滚动条样式
-              className="text-gray-500 text-center text-sm max-h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent px-1"
-              // 修改结束
-            >
-              {currentImage.alt} {/* 显示当前图片的描述文字 */}
-            </motion.p>
-          </AnimatePresence>
+          {useSharedDescription ? (
+            // 使用共享描述：文字不随图片切换而变换
+            <p className="text-gray-500 text-center text-sm max-h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent px-1">
+              {description}
+            </p>
+          ) : (
+            // 使用单独描述：文字随图片切换而变换
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={page}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
+                className="text-gray-500 text-center text-sm max-h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent px-1"
+              >
+                {currentImage.alt}
+              </motion.p>
+            </AnimatePresence>
+          )}
         </div>
-        {/* 修改结束 */}
       </div>
     </div>
   );

@@ -1,112 +1,204 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Card from "../../components/Card";
+import { FaHandPointer } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Gallery() {
+  // 状态管理：true 为 workList，false 为 photoList
+  const [isWorkDisplay, setIsWorkDisplay] = useState(true);
+
   // 将描述直接添加到原始数据结构中
-  const cardList = [
+  const workList = [
     {
       images: [
         {
           src: "/p1.jpg",
           width: 800,
-          height: 1000,
-          alt: "This photo was taken at my university, University of Limerick.After class, I walked back to the dorm with my classmate. Because there was still sun, my classmate took this beautiful photo for me.The shadow of my hat falls on my face like natural sunglasses. It is very cool, and I like it a lot.",
+          height: 1200,
         },
         {
           src: "/p2.jpg",
           width: 800,
           height: 1200,
-          alt: "This photo was taken in my dorm room.I chose all black clothes for my outfit today, I like it very much.Also, I kept my face like this on purpose, to make me look cool and hard to approach",
         },
         {
           src: "/p3.jpg",
           width: 800,
           height: 1200,
-          alt: "This photo was taken on a rainy day.I wore a very thick raincoat, like a fat, round roly-poly toy.I saw myself in the elevator mirror when I was going downstairs, and I thought it was very funny, so I took this photo to record this nice and silly moment.",
         },
         {
           src: "/p4.jpg",
           width: 800,
           height: 1200,
-          alt: "This photo was taken in the dorm elevator.I chose pink color for my clothes, and I also wear two cute small fish hair clips (or, little fish accessories).The dark pink and light pink match well and are not too strange. I like the small blue and pink fish to match my clothes and nail polish color.",
         },
       ],
-      title: "Business Photos – Individual",
+      title: "Display of personal paintings (part)",
       description:
-        "A formal-style portrait representing myself,suitable as a professional headshot.",
+        "This section presents some of my artworks, featuring plum blossoms, magnolias, peonies, and peach blossoms respectively. Created with Photoshop, these pieces adopt high-saturation colors to make the images more vivid and vibrant.",
     },
     {
       images: [
         {
-          src: "/b1.jpg",
+          src: "/m1.png",
           width: 800,
-          height: 1200,
-          alt: "This is a low-angle photo showing a Chinese building with many floors (maybe a tower).The building is mostly a striking deep red color, and the curved roof corners are stacked up many times.The roof parts have colorful tiles and decorations, and the whole structure looks old and big under the cloudy sky.",
+          height: 1000,
         },
         {
-          src: "/b2.jpg",
+          src: "/m2.png",
           width: 800,
           height: 1200,
-          alt: "The picture is outside, and the main thing is a big, smooth silver metal statue. It is very different from old Buddha statues.The surface is shiny and reflects the light and the things around it.The rough concrete walls and the metal rails at the bottom make a strong contrast with the smooth statue in the middle, giving a feeling like holy and science fiction.",
         },
         {
-          src: "/b3.jpg",
+          src: "/m3.png",
           width: 800,
           height: 1200,
-          alt: "On the left side of the photo, there is a very shiny gold relief carving with beautiful Buddha statues and complex patterns.On the right side, there is a dark wood board with a lot of Chinese Buddhist text carved on it, showing old wisdom.The rich gold carving and the serious dark text make a good contrast, creating a solemn and holy art atmosphere.",
         },
         {
-          src: "/b4.png",
+          src: "/m4.png",
           width: 800,
           height: 1200,
-          alt: "The sitting Buddha statue looks very important and mysterious because of the bright light.The light makes the face and the clothes look very clear, but the background is very dark.This kind of light makes the statue feel very holy and quiet.",
+        },
+        {
+          src: "/m5.png",
+          width: 800,
+          height: 1200,
         },
       ],
-      title: "Aesthetic Photos – Photography",
+      title: "Display of modelling (part)",
       description:
-        "Shot in a museum, these creative photos show my love for art and culture.",
+        "This section showcases some of my 3D modeling works, created with 3ds Max.",
     },
+
     {
       images: [
         {
-          src: "/o1.jpg",
+          src: "/w1.png",
           width: 1200,
           height: 800,
-          alt: "This photo is also my parrots.They are 4 years old, one is a Sun Conure and one is a Lovebird.They always like to stay together, I think the atmosphere is very warm, so I took this photo to remember the good time, every minute and every second.",
         },
         {
-          src: "/o2.jpg",
+          src: "/w2.png",
           width: 1200,
           height: 800,
-          alt: `This photo was taken in Hongcun, Anhui.Hongcun is a beautiful Chinese city.Three big white geese are standing on the green grass after the rain.Behind them is a pond with many lotus leaves and lots of green plants, and then there are old grey-white Huizhou-style buildings with special "horse-head walls."The whole picture looks soft and quiet, showing the countryside view and peaceful life of an old water village.`,
         },
         {
-          src: "/o3.jpg",
+          src: "/w3.png",
           width: 1200,
           height: 800,
-          alt: "This is a very colorful and warm close-up photo of a green Quaker Parrot baby.The parrot is in a clear box, standing up, and its big eyes and bright green and yellow feathers are lit by warm light, looking very cute.The yellow-green bedding at the bottom matches the parrot's feathers well, and the warm light makes the whole picture feel cozy and soft.",
         },
         {
-          src: "/o4.png",
+          src: "/w4.png",
           width: 1200,
           height: 800,
-          alt: "This is a lively photo of a group of Red-crowned Cranes in nature. The photo was taken in Qiqihar, China, which is called the City of Red-crowned Cranes.In the front, some cranes are doing different things; two of them are spreading their big black and white wings, maybe dancing or fighting, which looks very active.The background has endless green grass and a cloudy blue sky, making a peaceful scene of nature.",
+        },
+        {
+          src: "/w5.jpg",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/w6.jpg",
+          width: 1200,
+          height: 800,
+        },
+        {
+          src: "/w7.jpg",
+          width: 1200,
+          height: 800,
         },
       ],
-      title: "Interest Photos – Animals",
+      title: "Display of web page  (part)",
       description:
-        "A wildlife photo of red-crowned cranes,showing my passion for nature and animalphotography.",
+        "This section presents some of my web design works, created with Sketch and Figma. The pages feature diverse styles, including a Dunhuang-themed page with Chinese aesthetics and a minimalist style suitable for children's education.",
     },
   ];
+  const photoList = [
+    {
+      images: [
+        {
+          src: "/photo1.jpg",
+          width: 800,
+          height: 1200,
+        },
+      ],
+      title: "Passion photo ",
+      description: `This composite image is a true reflection of my love for traditional Chinese culture and art.To express this passion fully, I intentionally blended four things that matter most in my life — Guqin, calligraphy, tea ceremony, and Hanfu culture.I’ve been playing the Guqin for five years, practicing the tea ceremony for one year, and I’m currently learning calligraphy with a teacher.Every detail in the image holds this devotion:
+        • The Guqin strings at the bottom
+        • The calligraphy tools at the to
+        • The tea set in the foreground
+        • The Hanfu I’m wearing in the middle`,
+    },
+    {
+      images: [
+        {
+          src: "/photo2.jpg",
+          width: 800,
+          height: 1200,
+        },
+      ],
+      title: "Business photo",
+      description:
+        "This is my business headshot.It has high-definition clarity, and the skin details are well-preserved. I applied refined makeup and am looking directly at the camera with a confident expression and a subtle smile.I also slightly tilted my head to present my best angle, as I prefer this over a straight-on shot. The lighting is positioned to enhance my facial contours.I chose this specific image because I appreciate my micro-expression and my eyes. By minimizing the smile, I achieve a more professional appearance, showcasing a different, more professional side of myself to the camera.",
+    },
+
+    {
+      images: [
+        {
+          src: "/photo3.jpg",
+          width: 800,
+          height: 1200,
+        },
+      ],
+      title: "Aesthetic photo",
+      description:
+        "I really like images that are full of dramatic lighting effects, and I would describe this style as Aesthetic.With Christmas approaching, various places are filled with a festive spirit, which creates a warm and vintage atmosphere.I chose a vertical composition because of the numerous Christmas decorations on the ceiling, and I used them to fill the space at the top.In terms of depth of field and layering, the foreground features the audience, the middle ground is the performers, and the background is the decorations. This clear layering makes the viewers feel as if they are right there in the scene.The dominant colors are dark red and dark brown, which create a strong contrast with the gold and white elements—a very vintage and dramatic combination.The overall environment is dark, but the center of the stage is highlighted by localized warm lighting, which produces a dramatic light-and-shadow effect and emphasizes the focus of the festival and the performance.",
+    },
+  ];
+
+  // 根据状态选择当前显示的列表
+  const currentList = isWorkDisplay ? workList : photoList;
+
+  // 切换显示模式
+  const toggleDisplay = () => {
+    setIsWorkDisplay(!isWorkDisplay);
+  };
 
   return (
     <>
       <div className="h-[68px]"></div>
-      <div className="flex justify-around gap-10 w-full items-center h-[calc(100vh-68px)]">
-        {cardList.slice(0, 3).map((item, index) => (
-          <Card key={index} images={item.images} title={item.title} />
-        ))}
+      {/* 添加右上角切换按钮 */}
+      <div className="relative w-full">
+        <button
+          onClick={toggleDisplay}
+          className="absolute top-2 right-8 z-30 flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-200"
+        >
+          <FaHandPointer className="text-blue-500" />
+          <span className="text-sm font-medium text-gray-700">
+            {isWorkDisplay ? "Phone Display" : "Work Display"}
+          </span>
+        </button>
+      </div>
+      <div className="flex justify-around gap-10 w-full items-center h-[calc(100vh-68px)] overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={isWorkDisplay ? "work" : "photo"}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="flex justify-around gap-10 w-full"
+          >
+            {currentList.slice(0, 3).map((item, index) => (
+              <Card
+                key={`${isWorkDisplay ? "work" : "photo"}-${index}`}
+                images={item.images}
+                title={item.title || ""}
+                description={item.description}
+              />
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </>
   );
