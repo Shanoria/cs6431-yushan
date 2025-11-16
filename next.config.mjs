@@ -6,10 +6,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // 从环境变量读取 basePath，默认为空
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export default {
-  output: 'export',
+  output: "export",
   basePath: basePath,
   assetPrefix: basePath,
   images: {
