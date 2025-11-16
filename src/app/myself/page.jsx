@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
+import { getAssetPath } from "../../utils/assetPath";
 
 export default function Myself() {
   const skilList = [
@@ -20,7 +21,7 @@ export default function Myself() {
   // 定义浮动图片及其独特的样式
   const floatingImages = [
     {
-      src: "/myself_1.jpg",
+      src: getAssetPath("/myself_1.jpg"),
       alt: "myself 1",
       // 样式：定位、旋转、层级
       style: "w-32 h-auto top-4 left-4 rotate-[-15deg] z-10",
@@ -30,7 +31,7 @@ export default function Myself() {
       visible: "opacity-100 translate-x-0 translate-y-0",
     },
     {
-      src: "/myself_2.jpg",
+      src: getAssetPath("/myself_2.jpg"),
       alt: "myself 2",
       style: "w-28 h-auto top-12 right-4 rotate-[10deg] z-20",
       // 隐藏时：透明 且 向右上方位移
@@ -38,7 +39,7 @@ export default function Myself() {
       visible: "opacity-100 translate-x-0 translate-y-0",
     },
     {
-      src: "/myself_3.jpg",
+      src: getAssetPath("/myself_3.jpg"),
       alt: "myself 3",
       style: "w-36 h-auto bottom-16 left-8 rotate-[5deg] z-10",
       // 隐藏时：透明 且 向左下方位移
@@ -46,7 +47,7 @@ export default function Myself() {
       visible: "opacity-100 translate-x-0 translate-y-0",
     },
     {
-      src: "/myself_4.jpg",
+      src: getAssetPath("/myself_4.jpg"),
       alt: "myself 4",
       style: "w-24 h-auto bottom-4 right-10 rotate-[-8deg] z-0",
       // 隐藏时：透明 且 向右下方位移
@@ -87,7 +88,7 @@ export default function Myself() {
     <div className="overflow-hidden">
       <div className="w-full relative">
         <Image
-          src={"/myself_banner.png"}
+          src={getAssetPath("/myself_banner.png")}
           alt="myself_banner"
           width={1920}
           height={303}
@@ -112,7 +113,7 @@ export default function Myself() {
             onMouseLeave={() => setIsHovered(false)} // 3. 添加 mouse leave
           >
             <Image
-              src={"/myself_pic.jpg"}
+              src={getAssetPath("/myself_pic.jpg")}
               alt="myself_pic"
               width={900}
               height={0}
@@ -159,7 +160,7 @@ export default function Myself() {
                   {skilList.map((skill) => (
                     <div key={skill.name} className="relative w-6 h-6">
                       <Image
-                        src={`/${skill.name}.png`}
+                        src={getAssetPath(`/${skill.name}.png`)}
                         alt={skill.alt}
                         layout="fill"
                         objectFit="contain"
@@ -168,7 +169,7 @@ export default function Myself() {
                   ))}
                   <div key={"figma.ink"}>
                     <Image
-                      src={`/figma.ink.png`}
+                      src={getAssetPath(`/figma.ink.png`)}
                       alt={"figma.ink"}
                       height={24}
                       width={68}
@@ -182,7 +183,7 @@ export default function Myself() {
                   {learningList.map((learning) => (
                     <div key={learning.name} className="relative w-6 h-6">
                       <Image
-                        src={`/${learning.name}.png`}
+                        src={getAssetPath(`/${learning.name}.png`)}
                         alt={learning.alt}
                         layout="fill"
                         objectFit="contain"
@@ -207,14 +208,14 @@ export default function Myself() {
         {/* 这样它就会相对于主内容区的右下角定位，而不会影响文字布局 */}
         <div className="absolute right-0 bottom-0 w-[408px] h-[431px] opacity-70">
           <Image
-            src={"/bamboo.png"}
+            src={getAssetPath("/bamboo.png")}
             alt="bamboo"
             layout="fill"
             objectFit="contain"
           />
           <Image
             ref={bambooAnimationRef}
-            src={"/bamboo.png"}
+            src={getAssetPath("/bamboo.png")}
             alt="bamboo animation"
             layout="fill"
             objectFit="contain"

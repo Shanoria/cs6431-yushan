@@ -33,7 +33,7 @@ export default function MainPage() {
             height: "500px",
           }}
         >
-          <Image src={"/lotus.png"} alt="荷花" fill />
+          <Image src={getAssetPath("/lotus.png")} alt="荷花" fill />
           <div
             style={{
               position: "absolute",

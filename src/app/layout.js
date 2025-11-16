@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Image from "next/image";
 import "./globals.css";
 import Catalog from "../components/Catalog";
+import { getAssetPath } from "../utils/assetPath";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,7 @@ export default function RootLayout({ children }) {
           }}
         >
           <Image
-            src="/bg.png"
+            src={getAssetPath("/bg.png")}
             alt="背景"
             fill
             style={{ objectFit: "cover" }}
