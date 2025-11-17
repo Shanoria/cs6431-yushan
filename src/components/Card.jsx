@@ -60,7 +60,7 @@ export default function Card({ images, title, description }) {
       <div className="relative w-full h-96 group overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
-            key={page} // key 必须是动态的，以便 AnimatePresence 检测到变化
+            key={page} // key 必须是动态的，以便 AnimatePresence 检测到变化.
             className="absolute w-full h-full"
             custom={direction}
             variants={variants}
