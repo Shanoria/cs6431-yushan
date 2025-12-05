@@ -164,15 +164,16 @@ export default function Video() {
                 {/* 右侧列 */}
                 <div className="flex flex-col gap-6">
                   {/* 2. Shoot storyboard - 右上 */}
-                  <div className="bg-white rounded-2xl shadow-lg p-6 h-[300px] overflow-hidden">
+                  <div className="bg-white rounded-2xl shadow-lg p-6 overflow-hidden">
                     <h2 className="text-2xl font-bold text-gray-800 mb-4">
                       Shoot Storyboard
                     </h2>
-                    <div className="w-full h-[calc(100%-3rem)] flex items-center justify-center">
+                    <div className="w-full h-[500px] flex items-center justify-center">
                       <img
                         src={getAssetPath("/video2.jpg")}
                         alt="Shoot Storyboard"
-                        className="w-full h-full object-contain rounded-lg"
+                        className="w-auto max-h-full object-contain rounded-lg rotate-90"
+                        style={{ maxWidth: '500px' }}
                       />
                     </div>
                   </div>
