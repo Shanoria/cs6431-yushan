@@ -15,6 +15,7 @@ export default function Catalog() {
     { name: "Professional Knowledge", path: "/knowledge" },
     { name: "Picture Gallery", path: "/gallery" },
     { name: "Video", path: "/video" },
+    { name: "Others", path: "/others" },
   ];
 
   
