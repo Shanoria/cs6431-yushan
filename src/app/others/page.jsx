@@ -98,14 +98,14 @@ const rightTopData = [
 // --- 新增：右侧下部六张图数据 ---
 // 请替换为您实际的图片路径
 const rightBottomData = [
-  { id: 1, title: "Scene 1", src: getAssetPath("/scene1.jpg"), detail: `Entry
+  { id: 1, title: "Scene 1", src: getAssetPath("/Scene1.jpg"), detail: `Entry
 
 • A glowing pedestal stands at the center of the space; the projection wall is empty.
 
 • Text appears on the screen: “Touch to be heard.”
 
 • Atmosphere: Empty, incomplete, suggesting that “something is missing.”` },
-  { id: 2, title: "Scene 2", src: getAssetPath("/scene2.jpg"), detail: `First Interaction
+  { id: 2, title: "Scene 2", src: getAssetPath("/Scene2.jpg"), detail: `First Interaction
 
 • The participant places their hand on the pulse sensor on the pedestal.
 
@@ -122,7 +122,7 @@ const rightBottomData = [
 ◦ Displays a geometric fragment
 
 • The sound loops gently with the heartbeat, and the space “comes alive” but remains incomplete.` },
-  { id: 3, title: "Scene 3", src: getAssetPath("/scene3.jpg"), detail: `Second Participant
+  { id: 3, title: "Scene 3", src: getAssetPath("/Scene3.jpg"), detail: `Second Participant
 
 • When a second person joins, the system will:
 
@@ -137,7 +137,7 @@ const rightBottomData = [
 • At this point, the two notes form harmony, colors begin to blend, and visual fragments start to connect.
 
 • The atmosphere shifts from “individual” to “collective.”` },
-  { id: 4, title: "Scene 4", src: getAssetPath("/scene4.jpg"), detail: ` Collective Completion
+  { id: 4, title: "Scene 4", src: getAssetPath("/Scene4.jpg"), detail: ` Collective Completion
 
 • When 4–6 participants have joined:
 
@@ -148,7 +148,7 @@ const rightBottomData = [
 ◦ All fragments form a complete circular mandala
 
 • The projection wall displays: “You matter.” “This space needs you.”` },
-  { id: 5, title: "Scene 5", src: getAssetPath("/scene5.jpg"), detail: ` Collective Completion
+  { id: 5, title: "Scene 5", src: getAssetPath("/Scene5.jpg"), detail: ` Collective Completion
 
 • When 4–6 participants have joined:
 
@@ -159,7 +159,7 @@ const rightBottomData = [
 ◦ All fragments form a complete circular mandala
 
 • The projection wall displays: “You matter.” “This space needs you.”` },
-  { id: 6, title: "Scene 6", src: getAssetPath("/scene6.jpg"), detail: `Detailed explanation` },
+  { id: 6, title: "Scene 6", src: getAssetPath("/Scene6.jpg"), detail: `Detailed explanation` },
 ];
 
 export default function SDGPage() {
