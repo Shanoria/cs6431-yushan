@@ -72,6 +72,12 @@ const textData = [
 • Dynamically adjust volume levels
 
 • Maintain consonant intervals to avoid dissonant sounds` },
+{
+    id: 3,
+    // 注意这里：我们将文件名传入，稍后在 JSX 中使用 getAssetPath 包裹
+    pdfUrl: "/INTERACTION ART.pdf",
+    pdfText: "For more details, please click here"
+  }
 ];
 
 const sdgData = [
@@ -86,12 +92,17 @@ const rightTopData = [
   {
     id: 1,
     src: getAssetPath("/Scene0.jpg"), 
-    detail: ""
+    detail: "The machine conceived at the beginning is closer to reality, too bulky and unsightly, too realistic, so the first version of the machine drawing was eliminated."
   },
   {
     id: 2,
-    src: getAssetPath("/Scene02.jpg"), // 确保你的静态资源里有这张图
-    detail: ""
+    src: getAssetPath("/Scene02.jpg"), 
+    detail: "Draw a simple idea"
+  },
+    {
+    id: 3,
+    src: getAssetPath("/Scene03.jpg"), 
+    detail: "A lot of ideas were summarised and this mind map was drawn. There are five parts in total, and finally a perfect chain of ideas was formed."
   }
 ];
 
@@ -243,7 +254,7 @@ export default function SDGPage() {
           </div>
 
           {/* 元素二：左侧内右侧等宽元素 - 纯文字独立轮播（无背景） */}
-          <div className="flex-1 relative group flex flex-col overflow-hidden min-w-0 h-full">
+          <div className="flex-1 relative bg-white group flex flex-col overflow-hidden min-w-0 h-full">
             <AnimatePresence mode="wait" custom={textDirection}>
               <motion.div
                 key={textPage}
@@ -260,14 +271,34 @@ export default function SDGPage() {
               >
                 {/* 1. 标题区：固定不动 */}
                 <div className="flex-shrink-0 mb-4 pb-2 border-b border-gray-200/60">
-                  <h3 className="text-xl font-bold text-gray-900 tracking-tight">
+                {
+                  textData[textPage].title && <h3 className="text-xl font-bold text-gray-900 tracking-tight">
                     {textData[textPage].title}
                   </h3>
+                }
+                  
                 </div>
 
                 {/* 2. 内容区：内部独立滚动 */}
                 <div className="flex-1 overflow-y-auto scrollbar-hide text-gray-600 text-[14px] leading-relaxed whitespace-pre-wrap font-light pr-2">
                   {textData[textPage].content}
+                  {textData[textPage].pdfUrl && (
+                    <div className="mt-8 mb-4">
+                      <a
+                        /* 利用 getAssetPath 包裹 PDF 路径，确保部署到 GitHub Pages 后路径正确 */
+                        href={getAssetPath(textData[textPage].pdfUrl)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white rounded-lg hover:bg-gray-700 hover:scale-[1.02] transition-all text-sm font-medium shadow-md"
+                      >
+                        {/* 添加一个小文档图标，增加精致感 */}
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        {textData[textPage].pdfText}
+                      </a>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -300,7 +331,7 @@ export default function SDGPage() {
           {/* --- 上半部分 (2张图，恢复左侧对齐) --- */}
           <div className="flex-shrink-0 flex flex-col gap-2 mb-4">
             <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
-              The First Edition (sket)
+              Design ideas
             </h4>
             
             <div className="grid grid-cols-3 gap-x-3 gap-y-3">
