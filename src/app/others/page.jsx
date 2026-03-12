@@ -24,7 +24,10 @@ const variants = {
 };
 
 const textData = [
-  { id: 1, title: "Core Concept of the Project 🎵", content: `The core of this installation is that "every person is a unique musical note". Through technology, we transform human heartbeats into perceptible sound and visuals, ultimately forming a collectively harmonious work.
+  {
+    id: 1,
+    title: "Core Concept of the Project 🎵",
+    content: `The core of this installation is that "every person is a unique musical note". Through technology, we transform human heartbeats into perceptible sound and visuals, ultimately forming a collectively harmonious work.
 
 • Theme Alignment: The project is closely tied to the United Nations Sustainable Development Goals (SDG 3: Good Health and Well-being, SDG 10: Reduced Inequalities), exploring mental health, a sense of belonging, and the importance of "being seen."
 
@@ -32,8 +35,12 @@ const textData = [
 
 ◦ Every individual matters; without you, the system is incomplete.
 
-◦ Personal emotions and heartbeats (representing individual states) converge into collective harmony (representing social connection).` },
-  { id: 2, title: "Technology & Algorithm Logic ⚙️", content: `Behind the installation is a sophisticated set of rules and algorithms that ensure a smooth and meaningful experience.
+◦ Personal emotions and heartbeats (representing individual states) converge into collective harmony (representing social connection).`,
+  },
+  {
+    id: 2,
+    title: "Technology & Algorithm Logic ⚙️",
+    content: `Behind the installation is a sophisticated set of rules and algorithms that ensure a smooth and meaningful experience.
 
 1. Signal Processing
 
@@ -71,13 +78,14 @@ const textData = [
 
 • Dynamically adjust volume levels
 
-• Maintain consonant intervals to avoid dissonant sounds` },
-{
+• Maintain consonant intervals to avoid dissonant sounds`,
+  },
+  {
     id: 3,
     // 注意这里：我们将文件名传入，稍后在 JSX 中使用 getAssetPath 包裹
     pdfUrl: "/INTERACTION ART.pdf",
-    pdfText: "For more details, please click here"
-  }
+    pdfText: "For more details, please click here",
+  },
 ];
 
 const sdgData = [
@@ -91,32 +99,46 @@ const sdgData = [
 const rightTopData = [
   {
     id: 1,
-    src: getAssetPath("/Scene0.jpg"), 
-    detail: "The machine conceived at the beginning is closer to reality, too bulky and unsightly, too realistic, so the first version of the machine drawing was eliminated."
+    src: getAssetPath("/Scene0.jpg"),
+    title: "Scene01",
+    detail:
+      "The machine conceived at the beginning is closer to reality, too bulky and unsightly, too realistic, so the first version of the machine drawing was eliminated.",
   },
   {
     id: 2,
-    src: getAssetPath("/Scene02.jpg"), 
-    detail: "Draw a simple idea"
+    src: getAssetPath("/Scene02.jpg"),
+    title: "Scene02",
+    detail: "Draw a simple idea",
   },
-    {
+  {
     id: 3,
-    src: getAssetPath("/Scene03.jpg"), 
-    detail: "A lot of ideas were summarised and this mind map was drawn. There are five parts in total, and finally a perfect chain of ideas was formed."
-  }
+    src: getAssetPath("/Scene03.jpg"),
+    title: "Scene03",
+    detail:
+      "A lot of ideas were summarised and this mind map was drawn. There are five parts in total, and finally a perfect chain of ideas was formed.",
+  },
 ];
 
 // --- 新增：右侧下部六张图数据 ---
 // 请替换为您实际的图片路径
 const rightBottomData = [
-  { id: 1, title: "Scene 1", src: getAssetPath("/Scene1.jpg"), detail: `Entry
+  {
+    id: 1,
+    title: "Scene 1",
+    src: getAssetPath("/Scene1.jpg"),
+    detail: `Entry
 
 • A glowing pedestal stands at the center of the space; the projection wall is empty.
 
 • Text appears on the screen: “Touch to be heard.”
 
-• Atmosphere: Empty, incomplete, suggesting that “something is missing.”` },
-  { id: 2, title: "Scene 2", src: getAssetPath("/Scene2.jpg"), detail: `First Interaction
+• Atmosphere: Empty, incomplete, suggesting that “something is missing.”`,
+  },
+  {
+    id: 2,
+    title: "Scene 2",
+    src: getAssetPath("/Scene2.jpg"),
+    detail: `First Interaction
 
 • The participant places their hand on the pulse sensor on the pedestal.
 
@@ -132,8 +154,13 @@ const rightBottomData = [
 
 ◦ Displays a geometric fragment
 
-• The sound loops gently with the heartbeat, and the space “comes alive” but remains incomplete.` },
-  { id: 3, title: "Scene 3", src: getAssetPath("/Scene3.jpg"), detail: `Second Participant
+• The sound loops gently with the heartbeat, and the space “comes alive” but remains incomplete.`,
+  },
+  {
+    id: 3,
+    title: "Scene 3",
+    src: getAssetPath("/Scene3.jpg"),
+    detail: `Second Participant
 
 • When a second person joins, the system will:
 
@@ -147,8 +174,13 @@ const rightBottomData = [
 
 • At this point, the two notes form harmony, colors begin to blend, and visual fragments start to connect.
 
-• The atmosphere shifts from “individual” to “collective.”` },
-  { id: 4, title: "Scene 4", src: getAssetPath("/Scene4.jpg"), detail: ` Collective Completion
+• The atmosphere shifts from “individual” to “collective.”`,
+  },
+  {
+    id: 4,
+    title: "Scene 4",
+    src: getAssetPath("/Scene4.jpg"),
+    detail: ` Collective Completion
 
 • When 4–6 participants have joined:
 
@@ -158,8 +190,13 @@ const rightBottomData = [
 
 ◦ All fragments form a complete circular mandala
 
-• The projection wall displays: “You matter.” “This space needs you.”` },
-  { id: 5, title: "Scene 5", src: getAssetPath("/Scene5.jpg"), detail: ` Collective Completion
+• The projection wall displays: “You matter.” “This space needs you.”`,
+  },
+  {
+    id: 5,
+    title: "Scene 5",
+    src: getAssetPath("/Scene5.jpg"),
+    detail: ` Collective Completion
 
 • When 4–6 participants have joined:
 
@@ -169,8 +206,14 @@ const rightBottomData = [
 
 ◦ All fragments form a complete circular mandala
 
-• The projection wall displays: “You matter.” “This space needs you.”` },
-  { id: 6, title: "Scene 6", src: getAssetPath("/Scene6.jpg"), detail: `Detailed explanation` },
+• The projection wall displays: “You matter.” “This space needs you.”`,
+  },
+  {
+    id: 6,
+    title: "Scene 6",
+    src: getAssetPath("/Scene6.jpg"),
+    detail: `Detailed explanation`,
+  },
 ];
 
 export default function SDGPage() {
@@ -183,7 +226,8 @@ export default function SDGPage() {
   };
 
   const paginateText = (newDirection) => {
-    let newIndex = (textPage + newDirection + textData.length) % textData.length;
+    let newIndex =
+      (textPage + newDirection + textData.length) % textData.length;
     setTextPage([newIndex, newDirection]);
   };
 
@@ -195,10 +239,8 @@ export default function SDGPage() {
      */
     <div className="h-screen w-full pt-[64px] overflow-hidden flex flex-col">
       <div className="flex-1 flex gap-8 p-8 min-h-0 min-w-0">
-        
         {/* 左侧区域：等宽左右布局 */}
         <div className="flex-1 flex gap-8 min-w-0">
-          
           {/* 元素一：轮播图 */}
           <div className="flex-1 relative rounded-2xl overflow-hidden shadow-xl bg-gray-100 group min-w-0 h-full">
             <AnimatePresence initial={false} custom={direction}>
@@ -228,7 +270,7 @@ export default function SDGPage() {
 
             {/* 底部描述文字 - 修正了原生的 p 标签导致 framer-motion 报错的问题 */}
             <div className="absolute bottom-0 left-0 right-0 p-8 pt-12 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10">
-              <motion.p 
+              <motion.p
                 key={`d-${page}`}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -265,18 +307,17 @@ export default function SDGPage() {
                 exit="exit"
                 transition={{
                   x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.3 }
+                  opacity: { duration: 0.3 },
                 }}
                 className="absolute inset-0 flex flex-col py-4 px-10 h-full"
               >
                 {/* 1. 标题区：固定不动 */}
                 <div className="flex-shrink-0 mb-4 pb-2 border-b border-gray-200/60">
-                {
-                  textData[textPage].title && <h3 className="text-xl font-bold text-gray-900 tracking-tight">
-                    {textData[textPage].title}
-                  </h3>
-                }
-                  
+                  {textData[textPage].title && (
+                    <h3 className="text-xl font-bold text-gray-900 tracking-tight">
+                      {textData[textPage].title}
+                    </h3>
+                  )}
                 </div>
 
                 {/* 2. 内容区：内部独立滚动 */}
@@ -292,8 +333,19 @@ export default function SDGPage() {
                         className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white rounded-lg hover:bg-gray-700 hover:scale-[1.02] transition-all text-sm font-medium shadow-md"
                       >
                         {/* 添加一个小文档图标，增加精致感 */}
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                          />
                         </svg>
                         {textData[textPage].pdfText}
                       </a>
@@ -318,9 +370,8 @@ export default function SDGPage() {
             </button>
           </div>
         </div>
-{/* ================= 右侧大区域（修复重叠与对齐） ================= */}
+        {/* ================= 右侧大区域（修复重叠与对齐） ================= */}
         <div className="flex-1 rounded-2xl bg-white p-5 lg:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.05)] min-w-0 h-full flex flex-col overflow-hidden">
-          
           {/* 全局大标题 */}
           <div className="flex-shrink-0 mb-4 pb-2 border-b border-gray-50">
             <h2 className="text-2xl lg:text-3xl font-extrabold text-gray-900 tracking-tight">
@@ -333,19 +384,18 @@ export default function SDGPage() {
             <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
               Design ideas
             </h4>
-            
+
             <div className="grid grid-cols-3 gap-x-3 gap-y-3">
               {rightTopData.map((item) => (
- 
                 <div key={item.id} className="flex flex-col gap-1.5">
                   <div className="relative group w-full aspect-[4/3] rounded-lg overflow-hidden bg-gray-50 border border-gray-100/50 shadow-sm flex items-center justify-center cursor-pointer">
                     <Image
                       src={item.src}
                       alt={item.title}
                       fill
-                      className="object-contain transition-transform duration-700 group-hover:scale-105 p-1" 
+                      className="object-contain transition-transform duration-700 group-hover:scale-105 p-1"
                     />
-                    
+
                     <div className="absolute inset-0 bg-black/80 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300 p-3 overflow-y-auto custom-scrollbar z-10">
                       <div className="text-white text-[10px] lg:text-xs leading-relaxed font-light whitespace-pre-wrap text-left">
                         {item.detail}
@@ -366,7 +416,7 @@ export default function SDGPage() {
             <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 flex-shrink-0">
               The Final Version
             </h4>
-            
+
             {/* 关键修改 3：在网格外部包裹一层 overflow-y-auto，如果高度不足则在内部滚动，绝不影响上方 */}
             <div className="flex-1 overflow-y-auto scrollbar-hide pb-4 pr-1">
               <div className="grid grid-cols-3 gap-x-3 gap-y-3 lg:gap-y-4">
@@ -393,7 +443,6 @@ export default function SDGPage() {
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </div>
