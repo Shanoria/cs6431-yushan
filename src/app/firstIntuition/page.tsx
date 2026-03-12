@@ -63,7 +63,6 @@ export default function FirstIntuitionPage() {
                   controls
                   className="w-full h-full object-contain"
                   src={getAssetPath(videoData[page].src)}
-                  type="video/mp4"
                 >
                   Your browser does not support the video tag.
                 </video>
