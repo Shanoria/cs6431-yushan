@@ -242,7 +242,7 @@ export default function FirstIntuitionPage() {
                 &quot;ugliness&quot; is exactly the core beauty of chance
                 operations. It removes my subjective musical bias and lets the
                 algorithm decide. It reminds us that sound is just sound, and we
-                don't always need to force it into a traditional musical
+                don&apos;t always need to force it into a traditional musical
                 structure.
               </p>
             </div>
